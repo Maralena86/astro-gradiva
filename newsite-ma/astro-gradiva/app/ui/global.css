@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+input[type='number'] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+body{
+  background-color: rgb(17, 16, 16);
+}
+.video-container{
+  width: 450px;
+  max-width: 100%;
+  border-radius: 10px;
+}
+.password-container {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.login-container{
+  background-color: black;
+  border: 2px solid rgb(44, 42, 42);
+}
+input {
+  background-color: gray;
+}
+
+.eye-icon {
+  background-color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+}
+.eye-icon:hover{
+  opacity: 0.6;
+}
