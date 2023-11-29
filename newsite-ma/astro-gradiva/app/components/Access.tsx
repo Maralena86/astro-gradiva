@@ -1,5 +1,5 @@
-import sha256 from "crypto-js/sha256";
 import Image from "next/image";
+import crypto from "crypto";
 import { Dispatch, SetStateAction, useState } from "react";
 import logo from "@/public/logo-nubia.png";
 import { EyeIcon, EyeOff } from "lucide-react";
@@ -11,15 +11,14 @@ export const Access = ({
 }) => {
 	const [code, setCode] = useState("");
 	const [hash, setHash] = useState("");
-
 	const [showPassword, setShowPassword] = useState(false);
+
 	const handleClick = () => {
-		console.log("Coucou kk");
-		setHash(sha256(code).toString());
+		const hash = crypto.createHash("sha256"); // Vous pouvez choisir un algorithme de hachage différent si nécessaire
+		hash.update(code);
 
 		if (
-			// code === "Gradiva2024"
-			hash ===
+			hash.digest("hex") ===
 			"f1264fe082ef163498687cf3d9ba5f33ea3a56c46a22c83bd50d0c8cd2059e02"
 		) {
 			setAccess(true);
