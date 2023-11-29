@@ -37,23 +37,25 @@ export const Access = ({
 				<div className="md:mx-34 mx-4 mx-auto flex flex-col  items-center space-y-4 py-16 font-semibold text-gray-500 sm:mx-24 lg:mx-56">
 					<Image src={logo} alt={"logo"} width={150} />
 					<h1 className="text-2xl text-white">Conexion de acceso</h1>
-					<div className="bg-white flex">
-						<input
-							type={showPassword ? "text" : "password"}
-							value={code}
-							onChange={(e) => setCode(e.target.value)}
-							placeholder="Password"
-						/>
-						<span className="eye-icon" onClick={togglePasswordVisibility}>
-							{showPassword ? <EyeIcon /> : <EyeOff />}
-						</span>
-					</div>
-					<button
-						className="w-full rounded-full border border-blue-950 bg-blue-950 p-2 font-bold text-gray-100 hover:bg-blue-800"
-						onClick={() => handleClick()}
-					>
-						Entrar
-					</button>
+					<form>
+						<div className="bg-white flex">
+							<input
+								type={showPassword ? "text" : "password"}
+								value={code}
+								onChange={(e) => setCode(e.target.value)}
+								placeholder="Password"
+							/>
+							<span className="eye-icon" onClick={togglePasswordVisibility}>
+								{showPassword ? <EyeIcon /> : <EyeOff />}
+							</span>
+						</div>
+						<button
+							className="w-full rounded-full border border-blue-950 bg-blue-950 p-2 font-bold text-gray-100 hover:bg-blue-800 mt-4"
+							onClick={() => handleClick()}
+						>
+							Entrar
+						</button>
+					</form>
 				</div>
 			</div>
 		</div>
